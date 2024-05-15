@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {setCity} from '../../Redux/actions';
+import { setCity } from '../../Redux/actions';
 
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-export const SearchInput = () => {
+const SearchInput = () => {
     const [inputValue, setInputValue] = useState('');
     const dispatch = useDispatch();
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
+
     }
 
     const handleSubmit = (event) => {
