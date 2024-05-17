@@ -1,4 +1,5 @@
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 import './weatherCard.css'
 
 function WeatherCard({name, weather, temperature, image}) {
@@ -11,6 +12,7 @@ function WeatherCard({name, weather, temperature, image}) {
                     {temperature}
                     {weather}
                 </Card.Text>
+                <Button variant="danger">Удалить</Button>{' '}
             </Card.Body>
         </Card>
     );

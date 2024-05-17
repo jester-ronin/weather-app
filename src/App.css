@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .App-header {
   background-color: #365696;
@@ -17,17 +15,20 @@
   color: #61dafb;
 }
 
+
+
 .card{
   border: 0.5px;
   border-style: solid;
   border-color: black;
+  margin-top: 50px;
 }
 
 .card-body{
   border: 0.5px;
   border-style: solid;
   border-color: black;
-  background-color: aqua;
+  background-color: tomato;
 }
 
 .list-group-flush list-group {
@@ -39,7 +40,7 @@
 .card-img-top {
   width: 286px;
   height: 180px;
-  background-color: aquamarine;
 
 }
+
 

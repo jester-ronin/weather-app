@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCity } from '../../Redux/actions';
+import './searchInput.css'
+import Button from 'react-bootstrap/Button';
+
 
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -31,7 +34,7 @@ const SearchInput = () => {
                     onChange={handleInputChange}
                 />
             </InputGroup>
-            <button onClick={handleSubmit}>Submit</button>
+            <Button onClick={handleSubmit} variant="warning">Добавить</Button>
         </div>
     );
 };

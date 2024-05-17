@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 import SearchInput from '../searchInput/SearchInput';
-import './mainPage.css'
+import './mainPage.css';
 import WeatherCard from '../card/WeatherCard';
 import { useSelector } from 'react-redux';
-
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export const MainPage = () => {
     let jsonData = useSelector(state => state.reducer.jsonData);
@@ -12,7 +14,6 @@ export const MainPage = () => {
     if (!jsonData) {
         console.log("JSON not found (Main Page)")
     }
-
 
     function temperatureConverter(jsonData) {
         let result = jsonData.main.temp - 273.15;
@@ -30,26 +31,30 @@ export const MainPage = () => {
     }
 
     return (
-        <div>
-            <div className="MainPage">
-                <header className="App-header">
-                </header>
-                <img
-                    src="https://openweathermap.org/themes/openweathermap/assets/img/mobile_app/android-app-top-banner.png"
-                    className="App-logo"
-                    alt="logo"
-                />
-                <SearchInput />
-                {jsonData && (
-                    <WeatherCard
-                        name={jsonData.name}
-                        weather={jsonData.weather[0].main}
-                        temperature={temperatureConverter(jsonData) + "° "}
-                        image={selectionPictures(jsonData)}
+        <Container>
+            <header className="App-header">
+            </header>
+            <Row>
+                <Col xs={8}>
+                    <img
+                        src="https://openweathermap.org/themes/openweathermap/assets/img/mobile_app/android-app-top-banner.png"
+                        className="App-logo"
+                        alt="logo"
                     />
-                )}
-            </div >
-        </div>
+                    <SearchInput />
+                </Col>
+                <Col xs={4}>
+                    {jsonData && (
+                        <WeatherCard
+                            name={jsonData.name}
+                            weather={jsonData.weather[0].main}
+                            temperature={temperatureConverter(jsonData) + "° "}
+                            image={selectionPictures(jsonData)}
+                        />
+                    )}
+                </Col>
+            </Row>
+        </Container>
     )
 }
 

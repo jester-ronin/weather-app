@@ -6,7 +6,7 @@ const initialState = {
         Snow: 'https://static.vecteezy.com/system/resources/previews/007/488/951/original/light-snow-color-icon-winter-snowy-weather-cloud-and-snowflake-weather-forecast-isolated-illustration-vector.jpg',
         Thunderstorm: 'https://cdn.dribbble.com/users/2120934/screenshots/6193517/17_tstorm.gif',
         Drizzle: 'https://cdn-icons-png.flaticon.com/512/4837/4837678.png',
-        Clear: 'https://static-00.iconduck.com/assets.00/weather-clear-symbolic-icon-2048x2048-v4afvu7m.png'
+        Clear: 'https://static-00.iconduck.com/assets.00/weather-clear-symbolic-icon-2048x2048-v4afvu7m.png',
     }
 };
 
