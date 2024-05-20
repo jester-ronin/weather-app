@@ -20,7 +20,13 @@ const SearchInput = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputValue)
-        dispatch(setCity(inputValue))
+        if (!inputValue) {
+            return null
+        }
+        else {
+            dispatch(setCity(inputValue))
+
+        }
     }
 
     return (

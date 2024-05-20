@@ -1,6 +1,8 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const initialState = {
-    city: 'lvov',
-    imagesUrl : {
+    cities: [],
+    imagesUrl: {
         Clouds: 'https://i.pinimg.com/736x/56/af/e5/56afe5a3c9cb93d0c7f2477222b7ab12.jpg',
         Rain: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Weather-sun-clouds-rain.svg/1024px-Weather-sun-clouds-rain.svg.png',
         Snow: 'https://static.vecteezy.com/system/resources/previews/007/488/951/original/light-snow-color-icon-winter-snowy-weather-cloud-and-snowflake-weather-forecast-isolated-illustration-vector.jpg',
@@ -13,15 +15,26 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_CITY':
+            const newCity = {
+                name: action.city,
+                id: uuidv4(),
+                data: null,
+
+            }
             return {
                 ...state,
-                city: action.city,
-            };
-        case 'SET_JSON_DATA':
-            return{
+                cities: [...state.cities, newCity]
+
+            }
+        case 'SET_CITY_DATA':
+            return {
                 ...state,
-                jsonData: action.jsonData,
-            };
+                cities: state.cities.map(city =>
+                    city.id === action.payload.id
+                        ? { ...city, data: action.payload.data }
+                        : city
+                )
+            }
         default:
             return state;
 

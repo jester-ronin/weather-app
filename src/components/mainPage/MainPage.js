@@ -8,23 +8,20 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 export const MainPage = () => {
-    let jsonData = useSelector(state => state.reducer.jsonData);
-    let imagesUrl = useSelector(state => state.reducer.imagesUrl)
+    const imagesUrl = useSelector(state => state.reducer.imagesUrl)
+    const cities = useSelector(state => state.reducer.cities);
 
-    if (!jsonData) {
-        console.log("JSON not found (Main Page)")
-    }
-
-    function temperatureConverter(jsonData) {
-        let result = jsonData.main.temp - 273.15;
+    function temperatureConverter(cities) {
+        let result = cities.data.main.temp - 273.15;
         return Math.round(result)
     }
 
-    function selectionPictures(jsonData) {
-        for (let key in imagesUrl) {
-            if (key === jsonData.weather[0].main) {
-                console.log(imagesUrl[key])
-                return imagesUrl[key];
+    function selectionPictures(cities) {
+        if (cities.data) {
+            for (let key in imagesUrl) {
+                if (key === cities.data.weather[0].main) {
+                    return imagesUrl[key];
+                }
             }
         }
         return null;
@@ -35,7 +32,7 @@ export const MainPage = () => {
             <header className="App-header">
             </header>
             <Row>
-                <Col xs={8}>
+                <Col xs={7}>
                     <img
                         src="https://openweathermap.org/themes/openweathermap/assets/img/mobile_app/android-app-top-banner.png"
                         className="App-logo"
@@ -43,19 +40,24 @@ export const MainPage = () => {
                     />
                     <SearchInput />
                 </Col>
-                <Col xs={4}>
-                    {jsonData && (
+                <Col xs={5}>                   
+                    {cities && cities.map(city => (
                         <WeatherCard
-                            name={jsonData.name}
-                            weather={jsonData.weather[0].main}
-                            temperature={temperatureConverter(jsonData) + "° "}
-                            image={selectionPictures(jsonData)}
+                            key={city.id}
+                            name={city.name}
+                            weather={city.data ? city.data.weather[0].main : null}
+                            temperature={city.data ? temperatureConverter(city) + "° " : null}
+                            image={selectionPictures(city)}
                         />
-                    )}
+                    ))}
                 </Col>
+            </Row>
+            <Row>
+                This is a web application for viewing the weather in any city
             </Row>
         </Container>
     )
 }
+
 
 export default MainPage;

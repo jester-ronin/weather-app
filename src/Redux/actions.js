@@ -5,9 +5,9 @@ export const setCity = function (city) {
     };
 };
 
-export const setJsonData = function(jsonData) {
+export const setCityData = function(id,data) {
     return {
-        type: 'SET_JSON_DATA',
-        jsonData
+        type: 'SET_CITY_DATA',
+        payload: {id, data}
     };
 };
