@@ -33,7 +33,7 @@ const SearchInput = () => {
         <div>
             <InputGroup size="lg">
                 <InputGroup.Text id="inputGroup-sizing-lg">Your city </InputGroup.Text>
-                <Form.Control
+                <Form.Control 
                     aria-label="Large"
                     aria-describedby="inputGroup-sizing-sm"
                     value={inputValue}
