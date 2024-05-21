@@ -1,0 +1,9 @@
+.row-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-row {
+    width: 48%; 
+    margin-bottom: 10px; 
+}

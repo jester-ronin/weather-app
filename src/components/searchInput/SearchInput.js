@@ -38,9 +38,10 @@ const SearchInput = () => {
                     aria-describedby="inputGroup-sizing-sm"
                     value={inputValue}
                     onChange={handleInputChange}
+                    placeholder='type...'
                 />
             </InputGroup>
-            <Button onClick={handleSubmit} variant="warning">Добавить</Button>
+            <Button onClick={handleSubmit} variant="warning">Add</Button>
         </div>
     );
 };

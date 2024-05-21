@@ -29,35 +29,38 @@ export const MainPage = () => {
 
     return (
         <Container>
-            <header className="App-header">
-            </header>
-            <Row>
-                <Col xs={7}>
-                    <img
-                        src="https://openweathermap.org/themes/openweathermap/assets/img/mobile_app/android-app-top-banner.png"
-                        className="App-logo"
-                        alt="logo"
-                    />
-                    <SearchInput />
-                </Col>
-                <Col xs={5}>                   
-                    {cities && cities.map(city => (
-                        <WeatherCard
-                            key={city.id}
-                            name={city.name}
-                            weather={city.data ? city.data.weather[0].main : null}
-                            temperature={city.data ? temperatureConverter(city) + "° " : null}
-                            image={selectionPictures(city)}
+            <header className="App-header"></header>
+            <div className="row-wrapper">
+                <Row className='custom-row'>
+                    <Col xs={12} md={12}>
+                        <img
+                            src="https://openweathermap.org/themes/openweathermap/assets/img/mobile_app/android-app-top-banner.png"
+                            className="App-logo"
+                            alt="logo"
                         />
-                    ))}
-                </Col>
-            </Row>
-            <Row>
+                        <SearchInput />
+                    </Col>
+                </Row>
+                <Row className='custom-row'>
+                    <Col xs={12} md={12}>
+                        {cities && cities.map(city => (
+                            <WeatherCard
+                                key={city.id}
+                                name={city.data ? city.data.name : null}
+                                weather={city.data ? city.data.weather[0].main : null}
+                                temperature={city.data ? temperatureConverter(city) + "° " : null}
+                                image={selectionPictures(city)}
+                            />
+                        ))}
+                    </Col>
+                </Row>
+            </div>
+            <Row className='custom-row'>
                 This is a web application for viewing the weather in any city
             </Row>
         </Container>
-    )
-}
+    );
+};
 
 
 export default MainPage;
