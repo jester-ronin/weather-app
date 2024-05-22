@@ -8,14 +8,13 @@ function WeatherCard({ name, weather, temperature, image, wind, onRemove }) {
             <Card.Img variant="top" src={image} />
             <Card.Body>
                 <Card.Title>
-                    {name}
+                    <h2>{name}</h2>
                 </Card.Title>
                 <Card.Text>
-                    {temperature}
-                    {weather}
+                    <p>{temperature} {weather}</p>
                 </Card.Text>
                 <Card.Text>
-                    {wind}
+                    <p>{wind}</p>
                 </Card.Text>
                 <Button variant="danger" onClick={onRemove}>Delete</Button>{' '}
             </Card.Body>
