@@ -1,3 +1,4 @@
+import { act } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
@@ -9,6 +10,7 @@ const initialState = {
         Thunderstorm: 'https://cdn.dribbble.com/users/2120934/screenshots/6193517/17_tstorm.gif',
         Drizzle: 'https://cdn-icons-png.flaticon.com/512/4837/4837678.png',
         Clear: 'https://static-00.iconduck.com/assets.00/weather-clear-symbolic-icon-2048x2048-v4afvu7m.png',
+        Haze: 'https://cdn-icons-png.flaticon.com/512/182/182264.png'
     }
 };
 
@@ -35,6 +37,12 @@ const reducer = (state = initialState, action) => {
                         : city
                 )
             }
+
+            case 'REMOVE_CITY':
+                return {
+                    ...state,
+                    cities: state.cities.filter(city => city.id !==action.id)
+                }
         default:
             return state;
 

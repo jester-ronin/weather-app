@@ -2,12 +2,14 @@ import React from 'react';
 import SearchInput from '../searchInput/SearchInput';
 import './mainPage.css';
 import WeatherCard from '../card/WeatherCard';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { removeCity } from '../../Redux/actions';
 
 export const MainPage = () => {
+    const dispatch = useDispatch()
     const imagesUrl = useSelector(state => state.reducer.imagesUrl)
     const cities = useSelector(state => state.reducer.cities);
 
@@ -25,6 +27,10 @@ export const MainPage = () => {
             }
         }
         return null;
+    }
+
+    function handleRemoveCity(id) {
+        dispatch(removeCity(id))
     }
 
     return (
@@ -66,6 +72,8 @@ export const MainPage = () => {
                             weather={city.data ? city.data.weather[0].main : null}
                             temperature={city.data ? temperatureConverter(city) + "° " : null}
                             image={selectionPictures(city)}
+                            wind={city.data ? "Wind " + city.data.wind.speed + ' m/s' : null}
+                            onRemove={() => handleRemoveCity(city.id)}
                         />
                     ))}
                 </Col>

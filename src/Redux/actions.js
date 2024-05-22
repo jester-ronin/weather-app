@@ -11,3 +11,8 @@ export const setCityData = function(id,data) {
         payload: {id, data}
     };
 };
+
+export const removeCity = (id) => ({
+    type: 'REMOVE_CITY',
+    id
+});
