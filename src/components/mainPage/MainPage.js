@@ -8,7 +8,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { removeCity } from '../../Redux/actions';
 import useWindowWidth from '../../hooks/useWindowWidth';
-import WeatherCarousel from '../WeatherCarousel';
+import WeatherCarousel from '../WeatherCarousel/WeatherCarousel';
+
 
 export const MainPage = () => {
     const dispatch = useDispatch();
@@ -94,18 +95,12 @@ export const MainPage = () => {
                     </Row>
                     <Row>
                         <Col xs={12}>
-                            {cities && cities.map(city => (
-                                <WeatherCarousel
-                                    key={city.id}
-                                    selectionPictures={selectionPictures}
-                                    name={city.data ? city.data.name : null}
-                                    weather={city.data ? city.data.weather[0].main : null}
-                                    temperature={city.data ? temperatureConverter(city) + "° " : null}
-                                    image={selectionPictures(city)}
-                                    wind={city.data ? "Wind " + city.data.wind.speed + ' m/s' : null}
-                                    onRemove={() => handleRemoveCity(city.id)}
-                                />
-                            ))}
+                        <WeatherCarousel
+                                cities={cities}
+                                selectionPictures={selectionPictures}
+                                temperatureConverter={temperatureConverter}
+                                handleRemoveCity={handleRemoveCity}
+                            />
                             
                             <h1>News</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
