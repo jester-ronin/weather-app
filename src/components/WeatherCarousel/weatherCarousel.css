@@ -1,0 +1,89 @@
+.carousel {
+    margin-top: 50px;
+
+}
+
+.carousel-indicators {
+    display: none;
+}
+
+.carousel-control-next {
+    width: 10px;
+}
+
+.carousel-control-prev {
+    width: 10px;
+
+}
+
+.carousel-control-next-icon {
+    background-color: tomato;
+}
+
+.carousel-control-prev-icon {
+    background-color: tomato;
+}
+
+.card-text {
+    margin-left: 20px;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+    #delete-button {
+        margin-bottom: 55px;
+        margin-left: 65%;
+    }
+
+    img.App-logo {
+        width: 350px;
+        height: 350px;
+    }
+
+    .carousel-control-next-icon {
+        background-color: tomato;
+        padding-left: 35px;
+    }
+    
+    .carousel-control-prev-icon {
+        background-color: tomato;
+        padding-right: 35px;
+    }
+
+    .carousel-control-next {
+        width: 10px;
+    }
+    
+    .carousel-control-prev {
+        width: 10px;
+    
+    }
+
+    .carousel.slide {
+       padding: 30px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    #delete-button {
+        margin-bottom: 55px;
+        margin-left: 60%;
+    }
+
+    .carousel-control-next-icon {
+        background-color: tomato;
+        padding-left: 10px;
+    }
+    
+    .carousel-control-prev-icon {
+        background-color: tomato;
+        padding-right: 10px;
+    }
+
+    .carousel.slide {
+        padding: 0px;
+
+    }
+}
