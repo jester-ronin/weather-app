@@ -1,6 +1,6 @@
 # Weather App
 
-Weather App is a web application that allows you to check the weather in any city. You can create cards for cities to track the weather in multiple locations simultaneously. The application is adapted for different screens, including mobile devices, tablets, and desktops.
+Weather App is a web application that allows you to check the weather in any city by API. You can create cards for cities to track the weather in multiple locations simultaneously. The application is adapted for different screens, including mobile devices, tablets, and desktops.
 
 ## Features
 
