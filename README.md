@@ -15,6 +15,7 @@ The project is built using the following technologies:
 
 - [React](https://reactjs.org/)
 - [React-Bootstrap](https://react-bootstrap.github.io/)
+- [Redux](https://redux.js.org)
 
 ## Components
 
