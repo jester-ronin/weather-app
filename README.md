@@ -1,43 +1,42 @@
 # Weather App
 
-Weather App - это веб-приложение, которое позволяет узнавать погоду в любом городе. Вы можете создавать карточки с городами, чтобы отслеживать погоду в нескольких местах одновременно. Приложение адаптировано для разных экранов, включая мобильные устройства, планшеты и настольные компьютеры.
+Weather App is a web application that allows you to check the weather in any city. You can create cards for cities to track the weather in multiple locations simultaneously. The application is adapted for different screens, including mobile devices, tablets, and desktops.
 
-## Функциональность
+## Features
 
-- Поиск погоды по городу.
-- Добавление карточек с погодой для различных городов.
-- Удаление карточек с погодой.
-- Адаптивный дизайн для мобильных устройств, планшетов и настольных компьютеров.
+- Search for city weather.
+- Add weather cards for various cities.
+- Delete weather cards.
+- Responsive design for mobile devices, tablets, and desktops.
 
-## Технологии
+## Technologies
 
-Проект написан с использованием следующих технологий:
+The project is built using the following technologies:
 
 - [React](https://reactjs.org/)
 - [React-Bootstrap](https://react-bootstrap.github.io/)
 
-- ## Компоненты
+## Components
 
 ### MainPage
 
-Основная страница приложения, где отображаются логотип, строка поиска и карточки с погодой для добавленных городов.
+The main page of the application, where the logo, search bar, and weather cards for added cities are displayed.
 
 ### WeatherCard
 
-Компонент, отображающий информацию о погоде для конкретного города, включая название города, температуру, описание погоды и скорость ветра.
+A component that displays weather information for a specific city, including the city name, temperature, weather description, and wind speed.
 
 ### WeatherCarousel
 
-Компонент карусели, который используется для отображения информации о погоде на мобильных устройствах.
+A carousel component used to display weather information on mobile devices.
 
-## Скриншоты
+## Screenshots
 
-### Десктопная версия
-![Десктопная версия](src/assets/desktop_screenshot.PNG)
+### Desktop Version
+![Desktop Version](src/assets/desktop_screenshot.PNG)
 
-### Мобильная версия
-![Мобильная версия](src/assets/mobile_screenshot.PNG)
+### Mobile Version
+![Mobile Version](src/assets/mobile_screenshot.PNG)
 
-### Планшетная версия
-![Планшетная версия](src/assets/tablet_screenshot.PNG)
-
+### Tablet Version
+![Tablet Version](src/assets/tablet_screenshot.PNG)
